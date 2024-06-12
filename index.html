@@ -3,71 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Homepage - E-Bill</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>E-Bill Signup</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <!-- Custom CSS -->
     <style>
         body {
-            background-image: url('bgimage.webp');
+            background-image: url('e-bill-background.jpg'); /* Replace 'e-bill-background.jpg' with your actual background image */
             background-size: cover;
             background-position: center;
-            height: 100vh;
-            margin: 0;
-            display: flex;
-            flex-direction: column;
+            color: #fff;
         }
-        header, footer {
-            width: 100%;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            text-align: center;
-            padding: 1rem 0;
-        }
-        .container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        .home-content {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 2rem;
+        .form-container {
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for form */
+            padding: 20px;
             border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 100%;
-            max-width: 800px;
-            text-align: center;
+            margin-top: 100px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo">E-Bill</a>
-            <ul>
-                <li><a href="login.html">Signin</a></li>
-                <li><a href="index.html">Signup</a></li>
-                <li><a href="Homepage_userdashboard.html">Homepage</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Services</a>
-                    <div class="dropdown-content">
-                        <a href="applyForNewConnection.html">New Connection</a>
-                        <a href="userHistory.html">Bill History</a>
-                        <a href="#">FAQ</a>
-                        <a href="Complaint&Feedback.html">Complaint</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
-    </header>
     <div class="container">
-        <div class="home-content">
-            <h2>Welcome to E-Bill</h2>
-            <p>Your one-stop solution for managing your electricity bills online.</p>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="form-container">
+                    <h2 class="text-center mb-4">E-Bill Signup</h2>
+                    <form action="#" method="post">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Full Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="tel" class="form-control" placeholder="Phone Number" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Address" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="City" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="Country" required>
+                        </div>
+                        <div class="form-group">
+                            <div class="g-recaptcha" data-sitekey="your_site_key"></div> <!-- Replace 'your_site_key' with your actual site key -->
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">Signup</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-    <footer>
-        <p>&copy; 2024 E-Bill. All rights reserved.</p>
-    </footer>
+    
+    <!-- Bootstrap JS and ReCaptcha -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-
