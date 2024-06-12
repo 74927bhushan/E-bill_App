@@ -1,1 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage - E-Bill</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-image: url('bgimage.webp');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+        header, footer {
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            text-align: center;
+            padding: 1rem 0;
+        }
+        .container {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .home-content {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a href="#" class="logo">E-Bill</a>
+            <ul>
+                <li><a href="login.html">Signin</a></li>
+                <li><a href="index.html">Signup</a></li>
+                <li><a href="Homepage_userdashboard.html">Homepage</a></li>
+                <li class="dropdown">
+                    <a href="#" class="dropbtn">Services</a>
+                    <div class="dropdown-content">
+                        <a href="applyForNewConnection.html">New Connection</a>
+                        <a href="userHistory.html">Bill History</a>
+                        <a href="#">FAQ</a>
+                        <a href="Complaint&Feedback.html">Complaint</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="home-content">
+            <h2>Welcome to E-Bill</h2>
+            <p>Your one-stop solution for managing your electricity bills online.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 E-Bill. All rights reserved.</p>
+    </footer>
+</body>
+</html>
 
