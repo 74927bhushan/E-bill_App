@@ -3,46 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Signup - E-Bill</title>
+    <title>Electricity Bill Payment System</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <script src="common.js" defer></script> 
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="#" class="logo">E-Bill</a>
-            <ul>
-                <li><a href="login.html" id="loginButton">Signin</a></li>
-                <li><a href="#" id="signupButton">Signup</a></li>
-                <li><a href="Homepage_userdashboard.html">Homepage</a></li>
-                <li class="dropdown">
-                    <a href="#" class="dropbtn">Services</a>
-                    <div class="dropdown-content">
-                        <a href="applyForNewConnection.html">New Connection</a>
-                        <a href="userHistory.html">Bill History</a>
-                        <a href="faq.html">FAQ</a> 
-                        <a href="Complaint&Feedback.html">Complaint</a>
-                    </div>
-                </li>
-                <li><a href="#" id="logoutButton" style="display: none;">Logout</a></li> 
-                <li id="welcomeUser"></li>
-            </ul>
-        </nav>
+
+    <!-- Header -->
+    <header class="bg-white text-center py-3">
+        <img src="download (1).png" alt="Logo" class="img-fluid">
+        <h1 class="my-3">Maharashtra State Electricity Distribution Co. Ltd.</h1>
     </header>
-    <div class="container">
-        <div class="signup-form">
-            <h2>Signup</h2>
-            <form>
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email" required>
-                <input type="password" placeholder="Password" required>
-                <button type="submit">Signup</button>
-            </form>
-            <p>Already have an account? <a href="login.html">Signin</a></p>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MAHAVITARAN</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="signup.html">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="complaint.html">Complaint</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bill-payment.html">Bill Payment</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <footer>
-        <p>© 2024 E-Bill. All rights reserved.</p>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-8">
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <a href="new-connection.html">
+                                <img class="d-block w-100" src="payonline3.jpg" alt="First slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Online Application Form</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="new-connection.html">
+                                <img class="d-block w-100" src="con_slider1a.jpg" alt="Second slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Get a New Connection</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="billing-and-payments.html">
+                                <img class="d-block w-100" src="con_slider3a.jpg" alt="Third slide">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Billing and Payments</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <!-- Add more carousel items for notices -->
+                        <div class="carousel-item">
+                            <a href="notice1.pdf" target="_blank">
+                                <img class="d-block w-100" src="notice1.jpg" alt="Notice 1">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Notice 1</h5>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="carousel-item">
+                            <a href="notice2.pdf" target="_blank">
+                                <img class="d-block w-100" src="notice2.jpg" alt="Notice 2">
+                                <div class="carousel-caption d-none d-md-block">
+                                    <h5>Notice 2</h5>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-6 mb-3">
+                        <a href="new-connection.html" class="feature-box">Apply for New Connection</a>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <a href="complaint.html" class="feature-box">Complaint</a>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <a href="feedback.html" class="feature-box">Feedback</a>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <a href="bill-payment.html" class="feature-box">Bill Payment</a>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <a href="bill-calculator.html" class="feature-box">Bill Calculator</a>
+                    </div>
+                    <div class="col-6 mb-3">
+                        <a href="helpdesk.html" class="feature-box">Helpdesk</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>© 2024 Maharashtra State Electricity Distribution Co. Ltd. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>

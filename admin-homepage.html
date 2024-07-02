@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - Maharashtra State Electricity Distribution Co. Ltd.</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white text-center py-3">
+        <img src="new_banner_1.png" alt="Banner" class="img-fluid">
+    </header>
+
+    <!-- Title and Logo -->
+    <div class="text-center my-3">
+        <img src="download (1).png" alt="Logo" class="img-fluid mb-3" style="max-width: 100px;">
+        <h2>Admin Dashboard</h2>
+        <h1 class="my-3">Maharashtra State Electricity Distribution Co. Ltd.</h1>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <div class="row">
+            <div class="col-md-12">
+                <h3>Complaints</h3>
+                <div id="complaintsList">
+                    <!-- Complaints will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3 fixed-bottom">
+        <div class="container">
+            <p>© 2024 Maharashtra State Electricity Distribution Co. Ltd. All rights reserved. <br>
+                Created by - Bhushan Choudhary.
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript for fetching complaints and updating status -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Fetch complaints data and render on page load
+            fetchComplaints();
+
+            // Function to fetch complaints
+            function fetchComplaints() {
+                // Simulated complaints data (replace with actual fetch logic)
+                var complaints = [
+                    { id: 1, title: 'Electricity Outage', description: 'Power outage in XYZ area.', status: 'unresolved' },
+                    { id: 2, title: 'High Bill Issue', description: 'Incorrect billing amount issue.', status: 'resolved' },
+                    { id: 3, title: 'Meter Reading Error', description: 'Meter reading discrepancy reported.', status: 'unresolved' }
+                ];
+
+                // Render complaints list
+                var complaintsList = document.getElementById('complaintsList');
+                complaintsList.innerHTML = ''; // Clear previous content
+
+                complaints.forEach(function(complaint) {
+                    var complaintItem = document.createElement('div');
+                    complaintItem.classList.add('card', 'my-3');
+
+                    var cardBody = document.createElement('div');
+                    cardBody.classList.add('card-body');
+
+                    var title = document.createElement('h5');
+                    title.classList.add('card-title');
+                    title.textContent = complaint.title;
+
+                    var description = document.createElement('p');
+                    description.classList.add('card-text');
+                    description.textContent = complaint.description;
+
+                    var status = document.createElement('p');
+                    status.classList.add('card-text');
+                    status.textContent = 'Status: ' + complaint.status;
+
+                    var resolveButton = document.createElement('button');
+                    resolveButton.classList.add('btn', 'btn-success', 'mr-2');
+                    resolveButton.textContent = 'Resolve';
+                    resolveButton.addEventListener('click', function() {
+                        // Handle status update logic (set status to 'resolved')
+                        complaint.status = 'resolved';
+                        status.textContent = 'Status: resolved';
+                        resolveButton.disabled = true;
+                        unresolvedButton.disabled = false; // Enable unresolved button if needed
+                    });
+
+                    var unresolvedButton = document.createElement('button');
+                    unresolvedButton.classList.add('btn', 'btn-warning');
+                    unresolvedButton.textContent = 'Mark as Unresolved';
+                    unresolvedButton.addEventListener('click', function() {
+                        // Handle status update logic (set status to 'unresolved')
+                        complaint.status = 'unresolved';
+                        status.textContent = 'Status: unresolved';
+                        unresolvedButton.disabled = true;
+                        resolveButton.disabled = false; // Enable resolve button if needed
+                    });
+
+                    // Disable resolve or unresolved button based on current complaint status
+                    if (complaint.status === 'resolved') {
+                        resolveButton.disabled = true;
+                    } else {
+                        unresolvedButton.disabled = true;
+                    }
+
+                    cardBody.appendChild(title);
+                    cardBody.appendChild(description);
+                    cardBody.appendChild(status);
+                    cardBody.appendChild(resolveButton);
+                    cardBody.appendChild(unresolvedButton);
+                    complaintItem.appendChild(cardBody);
+                    complaintsList.appendChild(complaintItem);
+                });
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,52 +1,55 @@
-// ... your common.js code ... 
+// JavaScript form validation
+document.addEventListener('DOMContentLoaded', () => {
+    const form = document.getElementById('connectionForm');
 
-// Sign up form handling (index.html)
-const signupForm = document.querySelector('.signup-form form');
+    form.addEventListener('submit', function(event) {
+        // Check all fields for validity
+        const fields = form.querySelectorAll('input, select');
+        fields.forEach(field => {
+            if (!field.checkValidity()) {
+                field.classList.add('is-invalid');
+            } else {
+                field.classList.remove('is-invalid');
+            }
+        });
 
-signupForm.addEventListener('submit', (event) => {
-    event.preventDefault(); 
+        // If form is invalid, prevent submission
+        if (!form.checkValidity()) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+    });
 
-    // Get data from the signup form
-    const name = signupForm.querySelector('input[placeholder="Full Name"]').value;
-    const email = signupForm.querySelector('input[placeholder="Email"]').value;
-    const password = signupForm.querySelector('input[placeholder="Password"]').value;
+    // Update billing address fields if same as meter address is checked
+    const sameAsMeterAddress = document.getElementById('sameAsMeterAddress');
+    sameAsMeterAddress.addEventListener('change', function() {
+        const meterFields = [
+            'plotFlatNo',
+            'societyName',
+            'streetLandmark',
+            'district',
+            'taluka',
+            'village',
+            'pincode'
+        ];
+        const billingFields = [
+            'billingPlotFlatNo',
+            'billingSocietyName',
+            'billingStreetLandmark',
+            'billingDistrict',
+            'billingTaluka',
+            'billingVillage',
+            'billingPincode'
+        ];
 
-    // Store user data in local storage
-    localStorage.setItem('userData', JSON.stringify({
-        name: name,
-        email: email,
-        password: password
-    }));
-
-    // Set login state to true
-    localStorage.setItem('isLoggedIn', 'true');
-    
-    // Redirect to homepage
-    window.location.href = 'Homepage_userdashboard.html';
-});
-
-// Login form handling (login.html)
-const loginForm = document.querySelector('.signin-form form');
-
-loginForm.addEventListener('submit', (event) => {
-    event.preventDefault(); 
-
-    // Get data from the login form
-    const email = loginForm.querySelector('input[placeholder="Email"]').value;
-    const password = loginForm.querySelector('input[placeholder="Password"]').value;
-
-    // Retrieve user data from local storage
-    let storedUserData = JSON.parse(localStorage.getItem('userData'));
-
-    // Check if the user exists and the password matches
-    if (storedUserData && storedUserData.email === email && storedUserData.password === password) {
-        // Set login state to true
-        localStorage.setItem('isLoggedIn', 'true');
-
-        // Redirect to homepage
-        window.location.href = 'Homepage_userdashboard.html';
-    } else {
-        // Display error message if credentials are incorrect
-        alert("Invalid email or password. Please try again.");
-    }
+        if (sameAsMeterAddress.checked) {
+            meterFields.forEach((field, index) => {
+                document.getElementById(billingFields[index]).value = document.getElementById(field).value;
+            });
+        } else {
+            billingFields.forEach(field => {
+                document.getElementById(field).value = '';
+            });
+        }
+    });
 });

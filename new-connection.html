@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Connection Form - Maharashtra State Electricity Distribution Co. Ltd.</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="bg-white text-center py-3">
+        <img src="new_banner_1.png" alt="Banner" class="img-fluid">
+    </header>
+
+    <!-- Title and Logo -->
+    <div class="text-center my-3">
+        <img src="download (1).png" alt="Logo" class="img-fluid mb-3" style="max-width: 100px;">
+        <h2>New Connection Application</h2>
+        <h1 class="my-3">Maharashtra State Electricity Distribution Co. Ltd.</h1>
+    </div>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <form id="connectionForm">
+            <!-- Consumer Category and Service Requested -->
+            <div class="form-group">
+                <label for="consumerCategory">Consumer Category <span class="text-danger">*</span></label>
+                <select class="form-control" id="consumerCategory" required>
+                    <option value="">-- Select --</option>
+                    <option value="residential">Residential</option>
+                    <option value="commercial">Commercial</option>
+                </select>
+                <div class="invalid-feedback">Consumer Category is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="serviceRequested">Service Requested <span class="text-danger">*</span></label>
+                <select class="form-control" id="serviceRequested" required>
+                    <option value="">-- Select --</option>
+                    <option value="temporary">Temporary</option>
+                    <option value="permanent">Permanent</option>
+                </select>
+                <div class="invalid-feedback">Service Requested is required.</div>
+            </div>
+
+            <!-- Application Details -->
+            <h3 class="mt-4">Application Details</h3>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="firstName">First Name <span class="text-danger">*</span></label>
+                    <input type="text" class="form-control" id="firstName" required>
+                    <div class="invalid-feedback">First Name is required.</div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="middleName">Middle Name</label>
+                    <input type="text" class="form-control" id="middleName">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="lastName">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="consumerFullName">Consumer Full Name</label>
+                <input type="text" class="form-control" id="consumerFullName">
+            </div>
+            <div class="form-group">
+                <label for="occupation">Occupation</label>
+                <select class="form-control" id="occupation">
+                    <option value="">-- Select --</option>
+                    <option value="self-employed">Self-employed</option>
+                    <option value="govt-employee">Government Employee</option>
+                    <option value="private-employee">Private Employee</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select class="form-control" id="gender">
+                    <option value="">-- Select --</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="casteCategory">Caste Category <span class="text-danger">*</span></label>
+                <select class="form-control" id="casteCategory" required>
+                    <option value="">-- Select --</option>
+                    <option value="open">Open</option>
+                    <option value="sc">SC</option>
+                    <option value="st">ST</option>
+                    <option value="obc">OBC</option>
+                </select>
+                <div class="invalid-feedback">Caste Category is required.</div>
+            </div>
+
+            <!-- Address Details -->
+            <h3 class="mt-4">Address Details</h3>
+            <div class="form-group">
+                <label for="nearestConsumerNo">Nearest Consumer No</label>
+                <input type="text" class="form-control" id="nearestConsumerNo">
+            </div>
+            <div class="form-group">
+                <label for="plotFlatNo">Plot/Flat No/Survey No/House No/Building Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="plotFlatNo" required>
+                <div class="invalid-feedback">This field is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="societyName">Society Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="societyName" required>
+                <div class="invalid-feedback">Society Name is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="streetLandmark">Street/Landmark</label>
+                <input type="text" class="form-control" id="streetLandmark">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="district">District</label>
+                    <input type="text" class="form-control" id="district">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="taluka">Taluka</label>
+                    <input type="text" class="form-control" id="taluka">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="village">Village</label>
+                    <input type="text" class="form-control" id="village">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="pincode">Pincode</label>
+                <input type="text" class="form-control" id="pincode">
+            </div>
+            <div class="form-group">
+                <label for="mobile">Mobile <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="mobile" required>
+                <div class="invalid-feedback">Mobile number is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email">
+            </div>
+            <div class="form-group">
+                <label for="aadhaarNumber">Aadhaar Number</label>
+                <input type="text" class="form-control" id="aadhaarNumber">
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone">
+            </div>
+
+            <!-- Billing Details -->
+            <h3 class="mt-4">Billing Details</h3>
+            <div class="form-group">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="sameAsMeterAddress">
+                    <label class="form-check-label" for="sameAsMeterAddress">
+                        Click here if billing address same as meter address
+                    </label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="billingPlotFlatNo">Plot/Flat No/Survey No/House No/Building Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="billingPlotFlatNo" required>
+                <div class="invalid-feedback">This field is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="billingSocietyName">Society Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="billingSocietyName" required>
+                <div class="invalid-feedback">Society Name is required.</div>
+            </div>
+            <div class="form-group">
+                <label for="billingStreetLandmark">Street/Landmark</label>
+                <input type="text" class="form-control" id="billingStreetLandmark">
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label for="billingDistrict">District</label>
+                    <input type="text" class="form-control" id="billingDistrict">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="billingTaluka">Taluka</label>
+                    <input type="text" class="form-control" id="billingTaluka">
+                </div>
+                <div class="form-group col-md-4">
+                    <label for="billingVillage">Village</label>
+                    <input type="text" class="form-control" id="billingVillage">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="billingPincode">Pincode</label>
+                <input type="text" class="form-control" id="billingPincode">
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-light text-center py-3 mt-5">
+        <p>&copy; 2024 Maharashtra State Electricity Distribution Co. Ltd.</p>
+    </footer>
+
+    <!-- Bootstrap and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+    <!-- JavaScript Validation -->
+    <script>
+        // Add JavaScript validation logic here
+        // Example: ensure fields are filled and correct format, etc.
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FAQ - Maharashtra State Electricity Distribution Co. Ltd.</title>
+    <title>Feedback - Maharashtra State Electricity Distribution Co. Ltd.</title>
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
@@ -17,18 +17,22 @@
     <!-- Title and Logo -->
     <div class="text-center my-3">
         <img src="download (1).png" alt="Logo" class="img-fluid mb-3" style="max-width: 100px;">
-        <h2>Frequently Asked Questions (FAQ)</h2>
+        <h2>Feedback Form</h2>
         <h1 class="my-3">Maharashtra State Electricity Distribution Co. Ltd.</h1>
     </div>
 
     <!-- Main Content -->
     <main class="container my-5">
-        <h3>FAQ Form</h3>
-        <form id="faqForm">
+        <form id="feedbackForm">
             <div class="form-group">
-                <label for="question">Your Question <span class="text-danger">*</span></label>
-                <textarea class="form-control" id="question" rows="3" required></textarea>
-                <div class="invalid-feedback">Please enter your question.</div>
+                <label for="feedback">Your Feedback <span class="text-danger">*</span></label>
+                <textarea class="form-control" id="feedback" rows="3" required></textarea>
+                <div class="invalid-feedback">Please enter your feedback.</div>
+            </div>
+            <div class="form-group">
+                <label for="name">Your Name <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="name" required>
+                <div class="invalid-feedback">Please enter your name.</div>
             </div>
             <div class="form-group">
                 <label for="email">Email <span class="text-danger">*</span></label>

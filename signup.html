@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Maharashtra State Electricity Distribution Co. Ltd.</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .signup-form {
+            background-color: rgba(255, 255, 255, 0.95); /* Adjust transparency here */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border: 1px solid #ced4da; /* Solid border */
+        }
+
+        /* Custom style for highlighting invalid fields */
+        .is-invalid {
+            border-color: #dc3545 !important;
+        }
+
+        /* Style for asterisk */
+        .required-field::after {
+            content: '*';
+            color: red;
+            margin-left: 2px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="bg-white text-center py-3">
+        <img src="download (1).png" alt="Logo" class="img-fluid">
+        <h1 class="my-3">Maharashtra State Electricity Distribution Co. Ltd.</h1>
+    </header>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">MAHAVITARAN</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.html">Login</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#">Signup</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="faq.html">FAQ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="complaint.html">Complaint</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="feedback.html">Feedback</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="bill-payment.html">Bill Payment</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <section class="bg-light py-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6 signup-form">
+                    <h2 class="text-center mb-4">Signup</h2>
+                    <p class="text-center text-danger"><strong>* denotes that all fields are necessary</strong></p>
+                    <form id="signupForm" action="submit_signup.php" method="POST" onsubmit="return validateForm()">
+                        <div class="form-group">
+                            <label for="fullName">Full Name <span class="required-field"></span></label>
+                            <input type="text" class="form-control" id="fullName" name="fullName" required>
+                            <div class="invalid-feedback">
+                                Please enter your full name.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email address <span class="required-field"></span></label>
+                            <input type="email" class="form-control" id="email" name="email" required>
+                            <div class="invalid-feedback">
+                                Please enter a valid email address.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="phoneNumber">Phone Number <span class="required-field"></span></label>
+                            <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" required>
+                            <div class="invalid-feedback">
+                                Please enter your phone number.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="connectionType">Connection Type <span class="required-field"></span></label>
+                            <select class="form-control" id="connectionType" name="connectionType" required>
+                                <option value="">Select Connection Type</option>
+                                <option value="residential">Residential</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="industrial">Industrial</option>
+                            </select>
+                            <div class="invalid-feedback">
+                                Please select your connection type.
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="reasonForConnection">Reason for Connection <span class="required-field"></span></label>
+                            <textarea class="form-control" id="reasonForConnection" name="reasonForConnection" rows="3" required></textarea>
+                            <div class="invalid-feedback">
+                                Please provide a reason for the connection.
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center py-3">
+        <div class="container">
+            <p>© 2024 Maharashtra State Electricity Distribution Co. Ltd. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        // Function to validate the form before submission
+        function validateForm() {
+            var isValid = true;
+
+            // Reset all invalid feedback messages and styles
+            $('.form-control').removeClass('is-invalid');
+            $('.invalid-feedback').hide();
+
+            // Validate each input field
+            if ($('#fullName').val() === '') {
+                $('#fullName').addClass('is-invalid');
+                $('#fullName').next('.invalid-feedback').show();
+                isValid = false;
+            }
+            if ($('#email').val() === '') {
+                $('#email').addClass('is-invalid');
+                $('#email').next('.invalid-feedback').show();
+                isValid = false;
+            }
+            if ($('#phoneNumber').val() === '') {
+                $('#phoneNumber').addClass('is-invalid');
+                $('#phoneNumber').next('.invalid-feedback').show();
+                isValid = false;
+            }
+            if ($('#connectionType').val() === '') {
+                $('#connectionType').addClass('is-invalid');
+                $('#connectionType').next('.invalid-feedback').show();
+                isValid = false;
+            }
+            if ($('#reasonForConnection').val() === '') {
+                $('#reasonForConnection').addClass('is-invalid');
+                $('#reasonForConnection').next('.invalid-feedback').show();
+                isValid = false;
+            }
+
+            // If all fields are valid, redirect to index.html
+            if (isValid) {
+                window.location.href = 'index.html';
+            }
+
+            return false; // Prevent form submission
+        }
+    </script>
+</body>
+</html>
